@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './login/login.component';
+import { ConfigComponent } from './config.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    LoginComponent,
+    ConfigComponent,
   ],
   imports: [
     FormsModule, // Para usar [(ngModel)]
@@ -13,6 +13,6 @@ import { FormsModule } from '@angular/forms';
 
   ],
   providers: [],
-  bootstrap: [LoginComponent]
+  bootstrap: [ConfigComponent]
 })
-export class AuthModule { }
+export class DataModule { }

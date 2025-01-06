@@ -1,0 +1,56 @@
+.config-container {
+    .breadcrumb {
+      margin-bottom: 16px;
+      ol {
+        display: flex;
+        list-style: none;
+        li {
+          margin-right: 8px;
+          a {
+            text-decoration: none;
+            color: #007bff;
+          }
+          p {
+            margin: 0;
+            color: #333;
+          }
+        }
+      }
+    }
+  
+    .header-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      .create-button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        cursor: pointer;
+        svg {
+          margin-right: 8px;
+        }
+      }
+    }
+  
+    .create-form {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+  
+    .table-container {
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        th, td {
+          text-align: left;
+          padding: 8px;
+          border: 1px solid #ddd;
+        }
+      }
+    }
+  }
+  

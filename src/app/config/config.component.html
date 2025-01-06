@@ -1,0 +1,65 @@
+<div class="config-container">
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <ol>
+      <li><a href="/configuration">Configuración</a></li>
+      <li>&gt;</li>
+      <li><p>Unidades de negocio</p></li>
+    </ol>
+  </nav>
+
+  <!-- Header Section -->
+  <div class="header-section">
+    <h5>Unidades de negocio</h5>
+    <button class="create-button" (click)="toggleCreateForm()">
+      <span class="icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+        </svg>
+      </span>
+      Crear
+    </button>
+  </div>
+
+  <!-- Create Form -->
+  <div *ngIf="showCreateForm" class="create-form">
+    <input type="text" [(ngModel)]="newName" placeholder="Nombre" aria-label="Nombre"/>
+    <input type="text" [(ngModel)]="newDescription" placeholder="Descripción" aria-label="Descripción"/>
+    <button (click)="addData()">Guardar</button>
+    <button (click)="toggleCreateForm()">Cancelar</button>
+  </div>
+
+  <!-- Data Table -->
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of dataList">
+          <td>{{ item.id || 'N/A' }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.description }}</td>
+          <td>
+            <button title="Editar" (click)="editData(item)">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+              </svg>
+            </button>
+            <button title="Borrar" (click)="deleteData(item.id)">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path>
+              </svg>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+</div>

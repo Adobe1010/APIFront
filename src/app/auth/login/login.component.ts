@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -23,6 +22,7 @@ export class LoginComponent {
   login(): void {
     this.authService.login(this.email, this.password).subscribe({
       next: (response) => {
+        //console.log('Respuesta recibida del servidor', response)
         localStorage.setItem('token', response.token); // Guarda el token en el almacenamiento local
         this.router.navigate(['/dashboard']); // Redirige al usuario tras un inicio exitoso
       },
